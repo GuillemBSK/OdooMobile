@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             /*looper so we can access the UI component from this thread*/
             Looper.prepare();
             if (id == loginTaskId){
-                if ( result instanceof Boolean && (Boolean)result == false) {
+                if ( result instanceof Boolean && (Boolean)result == true) {
                     odoo.MessageDialog(MainActivity.this, "Login Error. Please try again");
                 }
                 else {

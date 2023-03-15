@@ -40,12 +40,11 @@ public class DateTimeSerializer implements Serializer {
 
 	public Object deserialize(String dateStr) throws XMLRPCException {
 		try {
-			String value = dateStr; //TODO: añadir formatStringifNeeded();
+			String value = dateStr;
 			//return javax.xml.bind.DatatypeConverter.
 			//parseDateTime(value).getTime();
 			Locale l = new Locale("en","US");
-			Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSZ",l)
-					.parse(value);
+			Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSZ",l).parse(value);
 			return date.getTime();
 		} catch (Exception ex) {
 			throw new XMLRPCException("Unable to parse given date.", ex);
